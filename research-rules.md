@@ -89,9 +89,9 @@ Because AMUMA operates at the intersection of digital mental health, AI, and hum
 Data handling must conform to the **FAIR Data Principles (Wilkinson et al., 2016)**: **Findable, Accessible, Interoperable, and Reusable**.
 
 ### 3.1 Raw Data Immutability
-* **Read-Only Raw Data Rule:** The raw data directory (`interpretation/rawdata/`) must be treated as **write-protected and immutable**. 
-* **Zero In-Place Edits:** Never modify original CSV/XLSX files in place.
-* **Deterministic Transformation Pipelines:** Any cleaning, column renaming, imputation, or filtering must be executed via auditable, documented scripts or computational notebooks, exporting to an intermediate or processed data directory (e.g., `interpretation/processed_data/`).
+* **Read-Only Raw Data Rule:** Original, uncleaned survey datasets and response files must be treated as **write-protected and immutable**. 
+* **Zero In-Place Edits:** Never modify original raw data files in place.
+* **Deterministic Transformation Pipelines:** Any cleaning, column renaming, imputation, or filtering must be executed via auditable, documented transformation scripts or computational notebooks, maintaining a clear separation between raw inputs and cleaned analytical datasets.
 
 ### 3.2 De-Identification & Anonymization Protocols
 Before any dataset or figure is published or pushed to a public repository:
@@ -100,7 +100,7 @@ Before any dataset or figure is published or pushed to a public repository:
 3. **Text Scrubbing:** All free-form qualitative feedback (e.g., Column 29: Suggestions/Concerns) must be inspected and scrubbed of specific names, dorm locations, or unique personal identifiers.
 
 ### 3.3 Data Dictionary & Codebook
-* Every dataset utilized in the study must be accompanied by a formal `DATA_DICTIONARY.md` detailing:
+* Every dataset utilized in the study must be accompanied by a formal Data Dictionary / Codebook detailing:
   * Variable name and original survey prompt.
   * Data type (categorical, Likert scale 1–5, float, binary, string).
   * Valid range and coding schema (e.g., `0 = Minimal`, `1 = Mild`, `2 = Moderate`, `3 = Severe`).
@@ -188,7 +188,7 @@ Given AMUMA's conversational AI venting buffer (English & Cebuano/Bisaya) and tr
 
 ### 5.3 Guardrails & Red-Teaming Against Harm
 * **Strict Non-Diagnostic System Prompt:** System prompts must instruct the model to immediately deflect diagnostic questions (e.g., *"Do I have clinical depression?"*) with approved disclaimers directing the student to an RGC.
-* **Safety Test Suite (Adversarial Red-Teaming):** Maintain a dedicated test suite (`tests/test_safety_guardrails.py`) containing simulated crisis inputs, self-harm keywords, and diagnostic baiting. Verify that in 100% of test cases:
+* **Safety Test Suite (Adversarial Red-Teaming):** Maintain a dedicated adversarial test suite containing simulated crisis inputs, self-harm keywords, and diagnostic baiting. Verify that in 100% of test cases:
   * The model outputs empathetic, non-diagnostic guidance.
   * The Static Emergency Resource Card is triggered.
   * No harmful or toxic content is emitted.
@@ -266,7 +266,7 @@ Prior to marking any software feature complete or submitting any paper draft, ve
 
 ```markdown
 ### Phase 1: Data Integrity & Provenance
-- [ ] Raw data in `interpretation/rawdata/` is unedited and write-protected.
+- [ ] Original raw dataset is unedited, safely backed up, and write-protected.
 - [ ] All data cleaning steps are documented in an executable script/notebook.
 - [ ] Direct PII has been scrubbed; demographic categories satisfy k-anonymity.
 - [ ] Random seed (`SEED = 42`) is pinned across all analytical scripts.
