@@ -18,6 +18,7 @@
 6. [Empirical Evaluation, System Testing, & Statistical Standards](#6-empirical-evaluation-system-testing--statistical-standards)
 7. [Academic Writing, Authorship, & Plagiarism Standards](#7-academic-writing-authorship--plagiarism-standards)
 8. [Operational Research Pre-Flight Checklist (Definition of Done)](#8-operational-research-pre-flight-checklist-definition-of-done)
+9. [Detailed Operational Rule: k-Anonymity & Quasi-Identifier Aggregation](#9-detailed-operational-rule-k-anonymity--quasi-identifier-aggregation)
 
 ---
 
@@ -295,6 +296,51 @@ Prior to marking any software feature complete or submitting any paper draft, ve
 - [ ] Plagiarism similarity index is verified $< 15\%$.
 - [ ] Generative AI tool usage is disclosed in the Acknowledgments section.
 ```
+
+---
+
+## 9. Detailed Operational Rule: k-Anonymity & Quasi-Identifier Aggregation
+
+### 9.1 The Re-Identification Vulnerability (The "Jigsaw Effect")
+In scientific health informatics and under the **Philippine Data Privacy Act (RA 10173)**, removing **Direct Identifiers** (such as Student Names, ID Numbers, Email Addresses, and Phone Numbers) is **necessary but insufficient** to guarantee participant privacy.
+
+When secondary attributes—known as **Quasi-Identifiers**—are combined, they can uniquely single out an individual through cross-referencing:
+* **Direct Identifiers (Explicit PII):** Full Name, Student ID, Email, Phone, IP Address, Physical Address. *(Must be 100% eliminated before analysis).*
+* **Quasi-Identifiers (Indirect Clues):** Age, Academic College/Department, Specific Degree Program, Year Level, Dialect, Living Arrangement.
+
+> [!WARNING] The Re-Identification Scenario
+> Suppose the dataset contains an entry with: `Age: 27`, `Program: BS Technology Communication Management`, `Year: 4th Year`, paired with sensitive disclosures regarding severe depression or interpersonal trauma.  
+> Even without a name, anyone within that small department can easily deduce the student's exact identity because only one student fits that precise demographic profile. This constitutes a severe privacy violation.
+
+---
+
+### 9.2 The Mathematical Standard of $k$-Anonymity
+To systematically eliminate re-identification risks, the project enforces **$k$-Anonymity** (Sweeney, 2002):
+* A dataset satisfies **$k$-anonymity** if every distinct combination of quasi-identifiers is shared by at least **$k$ individuals** within the release.
+* For Project AMUMA's public reporting, cross-tabulations, and paper publications, the team enforces a minimum threshold of **$k \ge 5$**. No reported demographic cell or published subgroup may isolate fewer than 5 respondents.
+
+$$\forall Q \in \text{Quasi-Identifiers}, \quad \text{count}(Q) \ge k \quad (\text{where } k = 5)$$
+
+---
+
+### 9.3 Practical Transformation Strategies for AMUMA Survey Data
+
+When preparing data tables, statistical models, or visualization charts, researchers must apply **Generalization** and **Suppression/Aggregation**:
+
+| Survey Variable | Raw / Vulnerable Format | Aggregated / $k$-Anonymous Rule | Rationale |
+| :--- | :--- | :--- | :--- |
+| **Age** | Raw continuous integers (e.g., `17, 26, 27, 28`) | Bin into standard demographic tiers:<br>• `< 18`<br>• `18 – 20`<br>• `21 – 23`<br>• `24+` | Collapses outliers and elderly/minor extremes into broader cohorts. |
+| **Academic Program** | Granular text labels with sparse counts (e.g., programs with only 1–2 respondents) | Group programs with $n < 5$ respondents into broader classifications:<br>• `"Other CITC Programs"`<br>• `"Engineering & Architecture (CEA)"`<br>• `"External / Non-USTP"` | Prevents isolating single students enrolled in niche degree programs. |
+| **Year Level** | Rare statuses (e.g., `Irregular 5th Year`, `Extended`) | Recode sparse categories into standard tiers:<br>• `1st Year`<br>• `2nd Year`<br>• `3rd Year`<br>• `4th Year / Senior+` | Blends non-traditional student standing into common cohorts. |
+| **Free-Form Text (Suggestions & Concerns)** | Unfiltered qualitative text containing names, dorm names, or course codes | Perform manual de-identification scrubbing:<br>• Replace specific professor/staff names with `[FACULTY]`<br>• Replace dorm/boarding house addresses with `[OFF-CAMPUS HOUSING]`<br>• Replace specific section codes with `[SECTION]` | Ensures students venting about personal or departmental incidents cannot be identified by wording. |
+
+---
+
+### 9.4 Pre-Publication Verification Checklist
+Before submitting any manuscript chapter, conference slide, or public repository release:
+1. **Frequency Table Audit:** Run a frequency distribution on all quasi-identifier combinations (`Age Group` $\times$ `College` $\times$ `Year Level`). If any group has a count $n < 5$, apply further aggregation.
+2. **Cell Suppression in Cross-Tabs:** In multi-dimensional demographic tables, suppress cells with counts under 5 (displaying `< 5` or `*`) to prevent re-identification.
+3. **No Direct Row Dumps:** Never publish raw individual survey rows in paper appendices; always present aggregated summaries, frequency distributions, or anonymized quotes.
 
 ---
 *End of Protocol. This document governs all technical sprints, data analytics, and academic writing for Project AMUMA.*
