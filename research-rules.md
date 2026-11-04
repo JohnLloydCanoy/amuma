@@ -80,7 +80,7 @@ Because AMUMA operates at the intersection of digital mental health, AI, and hum
     5. **Prevention of Duplicate Submissions (Dual-Modality Controls):**
        * *Physical Paper Forms:* Administered manually with a strict one-form-per-student protocol, directly monitored and collected upon completion.
        * *Digital Google Forms:* Floated with the "Limit to 1 response" security toggle strictly enabled (requiring single-response user authentication), systematically preventing respondents from submitting duplicate entries.
-    6. **Data Cleansing Criteria:** Systematic handling of non-null counts, validation of completion fields (e.g., Column 0 and Column 30 consent checkboxes), and outlier detection documented in [`interpretation/data_cleaning.ipynb`](file:///C:/Users/Nitro/Desktop/Projects/School/amuma/interpretation/data_cleaning.ipynb).
+    6. **Data Cleansing Criteria:** Systematic handling of non-null counts, validation of completion fields (e.g., Column 0 and Column 30 consent checkboxes), and outlier detection.
 
 ---
 
@@ -91,7 +91,7 @@ Data handling must conform to the **FAIR Data Principles (Wilkinson et al., 2016
 ### 3.1 Raw Data Immutability
 * **Read-Only Raw Data Rule:** The raw data directory (`interpretation/rawdata/`) must be treated as **write-protected and immutable**. 
 * **Zero In-Place Edits:** Never modify original CSV/XLSX files in place.
-* **Deterministic Transformation Pipelines:** Any cleaning, column renaming, imputation, or filtering must be executed via auditable, version-controlled scripts or Jupyter notebooks (e.g., `interpretation/data_cleaning.ipynb`) exporting to an intermediate or processed data directory (e.g., `interpretation/processed_data/`).
+* **Deterministic Transformation Pipelines:** Any cleaning, column renaming, imputation, or filtering must be executed via auditable, documented scripts or computational notebooks, exporting to an intermediate or processed data directory (e.g., `interpretation/processed_data/`).
 
 ### 3.2 De-Identification & Anonymization Protocols
 Before any dataset or figure is published or pushed to a public repository:
@@ -147,7 +147,7 @@ Following the **FAIR Principles for Research Software (FAIR4RS)** and **ACM Arti
 All research contributions and codebase evolutions must follow **Conventional Commits** tied to specific research milestones:
 * `feat(triage): implement PHQ-9 scoring router`
 * `eval(nlp): benchmark Bisaya venting response latency`
-* `data(survey): clean N=709 demographic columns in data_cleaning.ipynb`
+* `data(survey): clean N=709 demographic survey columns`
 * `docs(paper): complete Section 3.2 on ISO 25010 security evaluation`
 * `repro(seed): pin random_state=42 across all cross-validation folds`
 
