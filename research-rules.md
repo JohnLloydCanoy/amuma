@@ -1,7 +1,6 @@
 # Scientific Research Paper Writing & Protocol Rules (Manuscript Template)
 ## AMUMA: An AI-Driven Appointment Scheduling, Gamified Mental Fitness, and Pre-Clinical Triage System for University Guidance Counseling
 **Document Identifier:** `AMUMA-RESEARCH-RULES-v1.0`  
-**Target Venue:** IEEE / ACM / Scopus-Indexed Computing & Health Informatics Conference / Journal  
 **Affiliation:** College of Information Technology and Computing (CITC), Department of Information Technology, University of Science and Technology of Southern Philippines (USTP-CDO)  
 **Authors / Proponents:** Arevalo, Zach Alfred M. · Canoy, John Lloyd D. · Cinco, John Dave P. · Jandayan, Carl Bernie A. · Pimentel, Domvi Ford B.  
 **Adviser:** JC Vanny Mill S. Tong  
