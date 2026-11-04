@@ -1,11 +1,11 @@
-# Scientific Research & Development Protocol Rules (Research Template)
+# Scientific Research Paper Writing & Protocol Rules (Manuscript Template)
 ## AMUMA: An AI-Driven Appointment Scheduling, Gamified Mental Fitness, and Pre-Clinical Triage System for University Guidance Counseling
 **Document Identifier:** `AMUMA-RESEARCH-RULES-v1.0`  
 **Target Venue:** IEEE / ACM / Scopus-Indexed Computing & Health Informatics Conference / Journal  
 **Affiliation:** College of Information Technology and Computing (CITC), Department of Information Technology, University of Science and Technology of Southern Philippines (USTP-CDO)  
 **Authors / Proponents:** Arevalo, Zach Alfred M. · Canoy, John Lloyd D. · Cinco, John Dave P. · Jandayan, Carl Bernie A. · Pimentel, Domvi Ford B.  
 **Adviser:** JC Vanny Mill S. Tong  
-**Standard Compliance:** Singapore Statement on Research Integrity · FAIR4RS · ACM Artifact Guidelines · CONSORT-AI / CHERRIES · ISO/IEC 25010 · RA 10173 · RA 11036 · RA 9258  
+**Standard Compliance:** Singapore Statement on Research Integrity · APA 7th Edition · IEEE / ACM Author Guidelines · CONSORT-AI / CHERRIES · ISO/IEC 25010 · RA 10173 · RA 11036 · RA 9258  
 
 ---
 
@@ -13,8 +13,8 @@
 1. [Core Scientific Research Philosophy & Integrity](#1-core-scientific-research-philosophy--integrity)
 2. [Ethical Governance, Human Subjects, & Regulatory Mandates](#2-ethical-governance-human-subjects--regulatory-mandates)
 3. [Data Management, Provenance, & FAIR Principles](#3-data-management-provenance--fair-principles)
-4. [Computational Reproducibility & Software Artifact Standards (FAIR4RS)](#4-computational-reproducibility--software-artifact-standards-fair4rs)
-5. [AI, Multilingual NLP, & Algorithmic Rigor](#5-ai-multilingual-nlp--algorithmic-rigor)
+4. [Academic Writing Tone, Tense, & Manuscript Conventions](#4-academic-writing-tone-tense--manuscript-conventions)
+5. [Standards for Reporting Methodology & AI in the Paper](#5-standards-for-reporting-methodology--ai-in-the-paper)
 6. [Empirical Evaluation, System Testing, & Statistical Standards](#6-empirical-evaluation-system-testing--statistical-standards)
 7. [Academic Writing, Authorship, & Plagiarism Standards](#7-academic-writing-authorship--plagiarism-standards)
 8. [Operational Research Pre-Flight Checklist (Definition of Done)](#8-operational-research-pre-flight-checklist-definition-of-done)
@@ -109,98 +109,93 @@ Before any dataset or figure is published or pushed to a public repository:
 
 ---
 
-## 4. Computational Reproducibility & Software Artifact Standards (FAIR4RS)
+## 4. Academic Writing Tone, Tense, & Manuscript Conventions
 
-Following the **FAIR Principles for Research Software (FAIR4RS)** and **ACM Artifact Review and Badging** guidelines:
+This section governs the formal grammar, academic register, and rhetorical conventions required when writing all chapters, drafts, and submissions of the research paper.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                   ACM ARTIFACT EVALUATION CRITERIA                     │
-├───────────────────────┬───────────────────────┬────────────────────────┤
-│  Artifacts Available  │  Artifacts Evaluated  │   Results Reproduced   │
-│   (Public / Zenodo)   │ (Documented & Working)│ (Deterministic Scripts)│
-└───────────────────────┴───────────────────────┴────────────────────────┘
-```
+### 4.1 Academic Voice, Tone, & Scholarly Register
+* **Objective Third-Person Stance:** The manuscript must maintain a formal, scholarly register. Avoid informal first-person narratives (*"we felt"*, *"I decided"*, *"in our opinion"*). Structure statements around the empirical evidence, the methodology, or the system:
+  * *Disallowed:* *"We built Amuma because we noticed counseling in USTP is hard to book."*
+  * *Standard Academic:* *"The Amuma platform was engineered to mitigate institutional intake friction and address student-reported hesitancy within university guidance counseling workflows."*
+* **Prohibition of Hype & Commercial Slang:** Never use conversational colloquialisms, marketing buzzwords, or emotional superlatives (*"revolutionary"*, *"game-changing"*, *"groundbreaking app"*, *"super helpful"*, *"miracle cure"*). Use precise, measured scientific descriptors (*"statistically significant"*, *"empirically evaluated"*, *"computationally efficient"*, *"clinically aligned"*).
+* **Active vs. Passive Voice Conventions (APA 7th Edition Standard):**
+  * **Use Passive Voice** when reporting standardized experimental procedures where the researcher is secondary to the scientific method (*"Surveys were administered across university units...", "Responses were cleaned and de-identified...", "System components were evaluated..."*).
+  * **Use Active Voice** when describing software mechanics, architecture, or conceptual frameworks (*"The FastAPI microservice processes triage payloads...", "Figure 2 illustrates the state transition architecture..."*).
 
-### 4.1 Determinism & Seed Pinning
-* **Global Seed Fixation:** All non-deterministic procedures (data splitting, cross-validation, synthetic dataset generation, weight initialization, k-means clustering, embedding generations) must explicitly set fixed seeds:
-  ```python
-  import os
-  import random
-  import numpy as np
+### 4.2 Section-by-Section Academic Tense Matrix
+To guarantee grammatical consistency across chapters, adhere strictly to this academic tense matrix:
 
-  SEED = 42
-  random.seed(SEED)
-  np.random.seed(SEED)
-  os.environ["PYTHONHASHSEED"] = str(SEED)
-  ```
-* Document the exact seed values in the paper's Methodology section.
+| Manuscript Section | Primary Tense | Concrete Usage Rules & Examples |
+| :--- | :--- | :--- |
+| **Title & Subheadings** | **Noun Phrases** (Title Case) | Concise, descriptive noun phrases (*"Multilingual Conversational Buffering for University Guidance Intake"*). |
+| **Abstract** | **Past Tense** (methods/results)<br>**Present Tense** (conclusions) | • *Past:* *"A pre-clinical triage platform was developed..."*, *"The system demonstrated high usability ($M = 82.4$)..."*<br>• *Present:* *"These findings highlight the feasibility of digital buffers in university mental health."* |
+| **Introduction & Problem Statement** | **Present Tense** (current realities)<br>**Present Perfect** (ongoing gaps) | • *Present:* *"Mental health stigma remains a pervasive barrier to help-seeking in Philippine higher education..."*<br>• *Present Perfect:* *"Recent institutional studies have documented widening counselor-to-student ratios..."* |
+| **Literature Review / Related Work** | **Past Tense** (prior studies)<br>**Present Tense** (established theories) | • *Past:* *"Santos et al. (2024) investigated student reluctance toward manual intake..."*<br>• *Present:* *"The Cognitive Behavioral Therapy (CBT) paradigm posits that structured cognitive reframing mitigates acute distress..."* |
+| **Methodology & System Architecture** | **Past Tense** (procedures executed)<br>**Present Tense** (permanent architecture) | • *Past:* *"A hybrid survey of 709 respondents was conducted...", "Data were partitioned using stratified sampling..."*<br>• *Present:* *"The Amuma architecture comprises four interconnected service tiers..."* |
+| **Results & Empirical Findings** | **Past Tense** (observed data)<br>**Present Tense** (tables & charts) | • *Past:* *"The model achieved an F1-score of 0.89...", "Students reported significantly higher comfort..."*<br>• *Present:* *"Table 3 presents the comparative latency metrics...", "Figure 4 displays the confusion matrix..."* |
+| **Discussion & Analytical Synthesis** | **Present Tense** (interpreting meaning)<br>**Past Tense** (recalling observations) | • *Present:* *"These outcomes indicate that dialect-aware venting reduces initial intake apprehension..."*<br>• *Past:* *"Because respondents highlighted severe privacy anxieties during preliminary evaluations..."* |
+| **Conclusion & Future Directions** | **Present Tense** (final deductions)<br>**Future / Modal Tense** (next steps) | • *Present:* *"Amuma provides an empirical blueprint for low-barrier university counseling triage..."*<br>• *Future/Modal:* *"Future investigations will expand longitudinal habit tracking across multi-campus university systems."* |
 
-### 4.2 Dependency Pinning & Environment Isolation
-* **Lockfile Enforcement:** Development must occur inside a pinned virtual environment. All dependencies must be strictly version-locked in `requirements.txt` or a lockfile (`pip freeze > requirements.lock` or `conda env export`).
-* **Hardware & Runtime Specification:** Record and publish:
-  * Python version (e.g., `3.11.x`), Node.js version (e.g., `v20.x`).
-  * OS platform (Windows 11 / Linux Ubuntu 22.04 LTS).
-  * Compute architecture (CPU / GPU specs, RAM, acceleration libraries like CUDA if applicable).
-* **Containerization:** Provide a `Dockerfile` and `docker-compose.yml` encapsulating the backend (FastAPI), frontend (Next.js PWA), and database (PostgreSQL) to enable 1-command replication by external reviewers.
+### 4.3 Mathematical, Numerical, & Statistical Prose Conventions
+* **Number Formatting Rules:**
+  * Spell out words for cardinal numbers below 10 (*"four functional modules"*, *"three primary stressors"*); use numerals for 10 and above (*"709 respondents"*, *"14-day observation window"*).
+  * Always use numerals when paired with units of measurement, percentages, or mathematical operations (*"3 seconds"*, *"5-point Likert scale"*, *"15% buffer"*).
+* **Statistical Notation Formatting (APA 7th Edition Standard):**
+  * Italicize all standard statistical symbols: *$N$* (total sample), *$n$* (subsample), *$M$* (mean), *$SD$* (standard deviation), *$p$* (probability), *$t$*, *$F$*, *$z$*, *$R^2$*, *$d$*.
+  * **No Leading Zero on Probabilities:** Because probability values cannot exceed 1.0, omit the leading zero: report *$p = .003$*, *$p = .042$*, or *$p < .001$*. **Never write $p = 0.000$**.
+  * Always report dispersion alongside central tendency: e.g., *$M = 82.5, SD = 6.4$*, and provide 95% Confidence Intervals: *$95\% \text{ CI } [78.2, 86.8]$*.
+* **Acronym & Abbreviation Protocol:**
+  * Spell out every acronym on first occurrence in the Abstract and again on first appearance in the manuscript body, followed immediately by its abbreviation in parentheses: e.g., *"Registered Guidance Counselor (RGC)"*, *"Role-Based Access Control (RBAC)"*, *"Progressive Web App (PWA)"*.
+  * Once defined, use the acronym consistently; avoid alternating between the full term and the abbreviation.
 
-### 4.3 Git Version Control & Commit Hygiene
-All research contributions and codebase evolutions must follow **Conventional Commits** tied to specific research milestones:
-* `feat(triage): implement PHQ-9 scoring router`
-* `eval(nlp): benchmark Bisaya venting response latency`
-* `data(survey): clean N=709 demographic survey columns`
-* `docs(paper): complete Section 3.2 on ISO 25010 security evaluation`
-* `repro(seed): pin random_state=42 across all cross-validation folds`
-
-### 4.4 Software Citation & Archiving
-* The repository must include a standardized `CITATION.cff` (Citation File Format) file in the root directory.
-* Prior to camera-ready paper submission, create a release snapshot and mint a permanent **Digital Object Identifier (DOI)** using **Zenodo** or **Figshare**.
+### 4.4 Scientific Citation & Paraphrasing Integrity (Strict APA 7th Edition)
+* **Synthesis Over Direct Quotation:** Avoid block quotes or verbatim literature excerpts. Synthesize external research into original analytical prose that directly supports your thesis.
+* **In-Text Citation Formatting (Strict APA 7th Edition):** All in-text citations must strictly adhere to the APA 7th Edition author-date format:
+  * **Parenthetical Citation:** Place author surname(s) and publication year in parentheses: `(Santos & Cruz, 2024)` or `(Kroenke et al., 2001)`. Use an ampersand (`&`) between two authors within parentheses.
+  * **Narrative Citation:** Integrate author surname(s) directly into the sentence prose with the year in parentheses: `Santos and Cruz (2024) observed that...` or `Kroenke et al. (2001) established that...`. Spell out the word *"and"* in narrative running text.
+  * **Three or More Authors:** From the very first citation, truncate to the first author's surname followed immediately by *"et al."* and the year: `(Arevalo et al., 2026)` or `Arevalo et al. (2026)`.
+  * **Multiple Citations in One Parenthesis:** Alphabetize multiple parenthetical citations by the first author's surname and separate distinct studies with semicolons: `(Brooke, 1996; Kroenke et al., 2001; Sweeney, 2002)`.
+  * **In-Text Citation Placement:** Position parenthetical citations immediately adjacent to the relevant claim or statistic, strictly before the terminal punctuation mark.
+* **Reference List Formatting (APA 7th Edition):**
+  * Include a dedicated References section at the end of the paper with a hanging indent (0.5 in).
+  * Alphabetize all entries by the surname of the first author.
+  * Provide clickable Digital Object Identifier (DOI) URLs formatted as `https://doi.org/10.xxxx/...` for all journal articles and proceedings.
+* **Primary Literature Ratio:** Ensure at least 80% of cited sources consist of peer-reviewed journal articles, conference proceedings, or official statutory acts published within the last 5 years.
 
 ---
 
-## 5. AI, Multilingual NLP, & Algorithmic Rigor
+## 5. Standards for Reporting Methodology & AI in the Paper
 
-Given AMUMA's conversational AI venting buffer (English & Cebuano/Bisaya) and triage summary aggregator:
+This section establishes how the technical implementation, conversational AI buffer, multilingual dialect handling, and evaluation pipelines must be formally articulated and justified within the paper's narrative.
 
-```
-[ Student Venting Input (Text / Voice) ]
-                     │
-         Language Toggle (EN / CEB)
-                     │
-    ┌────────────────▼────────────────┐
-    │     Multilingual AI Buffer      │
-    │  - Supportive, Non-Clinical     │
-    │  - Strict Grounding Guardrails  │
-    └────────────────┬────────────────┘
-                     │
-      Crisis or Clinical Query Flagged?
-         ├── YES ──► Static Emergency Card Triggered (tel: 911 / CSWD)
-         └── NO  ──► CBT Micro-Workouts / Habit Rewards / RGC Booking Bridge
-```
+### 5.1 Manuscript Standards for Reporting the Multilingual AI Buffer
+* **Academic Terminology:** Formally describe the conversational module as a *"multilingual pre-clinical conversational buffer"* or *"supportive digital middleman interface"*. Strictly avoid referring to the system as a *"virtual therapist"* or *"automated medical psychologist"*.
+* **Linguistic Rationale (Cebuano/Bisaya & Code-Switching):**
+  * The Methodology section must provide empirical justification for supporting Cebuano and *Bislish* (Bisaya-English-Tagalog mixing): document that university students in Cagayan de Oro articulate intimate emotional distress more authentically when utilizing native dialectal expressions.
+  * Report the qualitative verification process: state that generated Cebuano responses were reviewed by native speakers and an RGC to confirm cultural sensitivity, absence of inappropriate idioms, and supportive emotional cadence.
+* **System Prompt & Guardrail Disclosure:** Document the core prompt engineering constraints within the paper (or an appendix): describe how the AI is explicitly instructed to provide supportive, non-clinical listening while prohibiting diagnostic assertions or prescription recommendations.
 
-### 5.1 Multilingual & Dialectal Validation
-* **Cebuano / Bisaya Dialect Fidelity:** The system must not rely on raw automated machine translation without human validation. A subset of Cebuano responses must be reviewed by native speakers and an RGC to confirm cultural sensitivity, absence of derogatory idioms, and accurate emotional tone.
-* **Code-Switching Support:** Real-world university students in CDO frequently use *Bislish* (Bisaya-English-Tagalog mixing). The evaluation dataset must include authentic mixed-dialect samples to prevent out-of-vocabulary failures.
+### 5.2 Manuscript Standards for Reporting Data Partitioning & Reproducibility
+* **Zero Data Leakage Documentation:**
+  * In the Methodology section, clearly state the train/validation/test split ratios (e.g., 70/15/15 or 80/20) and the stratification criteria used across student year levels and college departments.
+  * **Report User-Level Splitting:** Explicitly document that partitioning for longitudinal interactions or multi-session evaluations was executed strictly at the **individual participant level** rather than the interaction level, ensuring no student's data appears in both training and test partitions.
+* **Computational Determinism Statement:** Include an explicit reproducibility statement in Chapter 3:  
+  > *"To ensure complete computational reproducibility, all data partitioning, clustering, and baseline evaluation routines were executed using a fixed pseudo-random seed parameter ($SEED = 42$) across all experimental iterations."*
 
-### 5.2 Train / Validation / Test Splitting Rules
-* **Zero Data Leakage:** Ensure training, validation, and holdout test partitions are strictly separated prior to any feature selection, hyperparameter tuning, or normalization.
-* **Stratified Sampling:** Stratify splits by key demographic variables (e.g., College unit, year level, language preference) to ensure balanced representation.
-* **User-Level Partitioning:** For longitudinal mood tracking or multiple session evaluations, **split by user ID**, never randomly across interactions. Leaking an individual user's data across both train and test splits invalidates scientific claims.
+### 5.3 Manuscript Standards for Reporting Non-Diagnostic Guardrails & Ethical Safety
+* **Dedicated Ethics & Safety Subsection:** The paper must feature a dedicated subsection titled *Ethical Governance and Non-Diagnostic Safety Protocols*, detailing:
+  1. **Compliance with the Philippine Mental Health Act (RA 11036):** Emphasizing that Amuma operates solely as a pre-screening bridge, preserving 100% of diagnostic and therapeutic authority for human Registered Guidance Counselors (RGCs).
+  2. **Statutory Data Privacy Protection (RA 10173):** Reporting end-to-end data encryption (TLS 1.3 in transit, AES-256 at rest) and RBAC data isolation preventing unauthorized personnel (clerks, peer facilitators) from viewing student intake logs.
+  3. **Adversarial Red-Teaming Results:** Report the methodology used to stress-test the conversational buffer with adversarial crisis prompts, self-harm keywords, and diagnostic baiting. Report that the system achieved 100% compliance by withholding diagnostic claims and immediately rendering the static Emergency Resource Card (`tel:` URI links to 911 and CSWD CDO).
 
-### 5.3 Guardrails & Red-Teaming Against Harm
-* **Strict Non-Diagnostic System Prompt:** System prompts must instruct the model to immediately deflect diagnostic questions (e.g., *"Do I have clinical depression?"*) with approved disclaimers directing the student to an RGC.
-* **Safety Test Suite (Adversarial Red-Teaming):** Maintain a dedicated adversarial test suite containing simulated crisis inputs, self-harm keywords, and diagnostic baiting. Verify that in 100% of test cases:
-  * The model outputs empathetic, non-diagnostic guidance.
-  * The Static Emergency Resource Card is triggered.
-  * No harmful or toxic content is emitted.
-
-### 5.4 Evaluation Metrics Reporting
-Papers must report both **computational metrics** and **human evaluation scores**:
-* **Quantitative Metrics:** Precision, Recall, Macro-F1 score, Confusion Matrix, and Response Latency (NFR benchmark: UI response $< 3$s, AI response $< 5$s).
-* **Qualitative / Human Expert Metrics:** Evaluated by Registered Guidance Counselors (RGCs) using a standardized 5-point Likert rubric:
-  1. *Empathy & Tone Appropriateness* (1 = Cold/Robotic, 5 = Empathetic & Safe).
-  2. *Safety & Non-Diagnostic Compliance* (Pass/Fail).
-  3. *Bisaya Linguistic Naturalness* (1 = Unnatural/Literal translation, 5 = Culturally authentic).
+### 5.4 Tabular & Narrative Standards for Reporting Evaluation Metrics
+* **Dual-Modality Evaluation Reporting:** The Results section must present both objective computational metrics and subjective human-expert ratings:
+  * **Quantitative Computational Benchmarks:** Present Precision, Recall, Macro-averaged F1-score, Confusion Matrix classifications, and Latency benchmarks (UI page load $< 3$s, AI inference $< 5$s).
+  * **Qualitative Clinical Expert Ratings:** Present Registered Guidance Counselor (RGC) evaluations conducted on structured 5-point Likert scales covering:
+    1. *Empathy and Supportive Tone* ($1 = \text{Cold/Robotic}$, $5 = \text{Highly Empathetic}$).
+    2. *Non-Diagnostic Safety Compliance* ($\text{Pass/Fail}$).
+    3. *Bisaya Dialectal Authenticity* ($1 = \text{Artificial/Literal Translation}$, $5 = \text{Culturally Natural}$).
+* **Linking Metrics to Practical Significance:** Every metric reported in the narrative must be contextualized: discuss how lower response latency and higher dialectal comfort directly eliminate intake hesitation and facilitate successful counseling appointments.
 
 ---
 
@@ -278,11 +273,11 @@ Prior to marking any software feature complete or submitting any paper draft, ve
 - [ ] RBAC isolates student logs from administrative and peer accounts (RA 10173).
 - [ ] All participant survey data has documented informed consent (CHERRIES).
 
-### Phase 3: Computational Reproducibility
-- [ ] Codebase runs cleanly in an isolated virtual environment.
-- [ ] `requirements.txt` contains pinned library versions without conflicts.
-- [ ] Git commit messages follow Conventional Commits formatting.
-- [ ] `CITATION.cff` is present in the repository root.
+### Phase 3: Academic Tone, Tense, & Manuscript Quality
+- [ ] Objective third-person voice maintained; zero conversational colloquialisms or marketing hype.
+- [ ] Section-by-section academic tense rules strictly verified (Past for methods/results, Present for theories/architecture).
+- [ ] All statistical values correctly formatted ($p < .001$, no leading zeros on probabilities, italicized symbols).
+- [ ] All acronyms explicitly expanded upon first use in Abstract and Body.
 
 ### Phase 4: AI & Scientific Evaluation
 - [ ] Train/validation/test splits are strictly partitioned without data leakage.
