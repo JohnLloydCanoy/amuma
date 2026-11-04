@@ -114,9 +114,11 @@ Before any dataset or figure is published or pushed to a public repository:
 This section governs the formal grammar, academic register, and rhetorical conventions required when writing all chapters, drafts, and submissions of the research paper.
 
 ### 4.1 Academic Voice, Tone, & Scholarly Register
-* **Objective Third-Person Stance:** The manuscript must maintain a formal, scholarly register. Avoid informal first-person narratives (*"we felt"*, *"I decided"*, *"in our opinion"*). Structure statements around the empirical evidence, the methodology, or the system:
-  * *Disallowed:* *"We built Amuma because we noticed counseling in USTP is hard to book."*
-  * *Standard Academic:* *"The Amuma platform was engineered to mitigate institutional intake friction and address student-reported hesitancy within university guidance counseling workflows."*
+* **Mandatory Third-Person Phrasing Rule:** The manuscript must **always** use standard academic third-person phrasing. First-person pronouns (*"I"*, *"we"*, *"us"*, *"our team"*, *"in our opinion"*) are strictly prohibited throughout all chapters. Authors and technical entities must be referred to using standardized formal nouns:
+  * **Authors / Researchers:** Refer exclusively to **"the proponents"**, **"the researchers"**, or **"the authors"**.
+  * **System / Software:** Refer to **"the proposed system"**, **"the platform"**, **"the application"**, or **"the PWA"**.
+  * *Disallowed (First-Person):* *"We built this feature because our survey showed students were shy to book."*
+  * *Enforced Academic Phrasing:* *"The proponents engineered this mechanism in response to survey findings indicating student hesitancy; consequently, the proposed system introduces an anonymous conversational buffer within the PWA."*
 * **Prohibition of Hype & Commercial Slang:** Never use conversational colloquialisms, marketing buzzwords, or emotional superlatives (*"revolutionary"*, *"game-changing"*, *"groundbreaking app"*, *"super helpful"*, *"miracle cure"*). Use precise, measured scientific descriptors (*"statistically significant"*, *"empirically evaluated"*, *"computationally efficient"*, *"clinically aligned"*).
 * **Active vs. Passive Voice Conventions (APA 7th Edition Standard):**
   * **Use Passive Voice** when reporting standardized experimental procedures where the researcher is secondary to the scientific method (*"Surveys were administered across university units...", "Responses were cleaned and de-identified...", "System components were evaluated..."*).
@@ -131,10 +133,12 @@ To guarantee grammatical consistency across chapters, adhere strictly to this ac
 | **Abstract** | **Past Tense** (methods/results)<br>**Present Tense** (conclusions) | • *Past:* *"A pre-clinical triage platform was developed..."*, *"The system demonstrated high usability ($M = 82.4$)..."*<br>• *Present:* *"These findings highlight the feasibility of digital buffers in university mental health."* |
 | **Introduction & Problem Statement** | **Present Tense** (current realities)<br>**Present Perfect** (ongoing gaps) | • *Present:* *"Mental health stigma remains a pervasive barrier to help-seeking in Philippine higher education..."*<br>• *Present Perfect:* *"Recent institutional studies have documented widening counselor-to-student ratios..."* |
 | **Literature Review / Related Work** | **Past Tense** (prior studies)<br>**Present Tense** (established theories) | • *Past:* *"Santos et al. (2024) investigated student reluctance toward manual intake..."*<br>• *Present:* *"The Cognitive Behavioral Therapy (CBT) paradigm posits that structured cognitive reframing mitigates acute distress..."* |
-| **Methodology & System Architecture** | **Past Tense** (procedures executed)<br>**Present Tense** (permanent architecture) | • *Past:* *"A hybrid survey of 709 respondents was conducted...", "Data were partitioned using stratified sampling..."*<br>• *Present:* *"The Amuma architecture comprises four interconnected service tiers..."* |
+| **Methodology & System Architecture** | **Past Tense** (completed researcher actions)<br>**Present / Future Tense** (system specifications) | • *Past (Procedures):* *"A hybrid survey of 709 respondents was conducted...", "Data were partitioned using stratified sampling..."*<br>• *Present/Future (System Spec):* *"The system architecture consists of four interconnected service tiers...", "The proposed PWA will process incoming client payloads..."* |
 | **Results & Empirical Findings** | **Past Tense** (observed data)<br>**Present Tense** (tables & charts) | • *Past:* *"The model achieved an F1-score of 0.89...", "Students reported significantly higher comfort..."*<br>• *Present:* *"Table 3 presents the comparative latency metrics...", "Figure 4 displays the confusion matrix..."* |
 | **Discussion & Analytical Synthesis** | **Present Tense** (interpreting meaning)<br>**Past Tense** (recalling observations) | • *Present:* *"These outcomes indicate that dialect-aware venting reduces initial intake apprehension..."*<br>• *Past:* *"Because respondents highlighted severe privacy anxieties during preliminary evaluations..."* |
 | **Conclusion & Future Directions** | **Present Tense** (final deductions)<br>**Future / Modal Tense** (next steps) | • *Present:* *"Amuma provides an empirical blueprint for low-barrier university counseling triage..."*<br>• *Future/Modal:* *"Future investigations will expand longitudinal habit tracking across multi-campus university systems."* |
+
+* **System Specification Tense Rule (Chapters 1 to 5):** Ensure Chapters 1 to 5 describe the system in present/future software engineering specification tense (e.g., *"The proposed PWA will process..."*, *"The system architecture consists of..."*), strictly avoiding past-tense claims suggesting the system has already completed clinical trials or full institutional deployment.
 
 ### 4.3 Mathematical, Numerical, & Statistical Prose Conventions
 * **Number Formatting Rules:**
@@ -274,8 +278,9 @@ Prior to marking any software feature complete or submitting any paper draft, ve
 - [ ] All participant survey data has documented informed consent (CHERRIES).
 
 ### Phase 3: Academic Tone, Tense, & Manuscript Quality
-- [ ] Objective third-person voice maintained; zero conversational colloquialisms or marketing hype.
+- [ ] Standard academic third-person phrasing strictly enforced ("the proponents", "the proposed system", "the PWA"); zero first-person pronouns ("I", "we", "our").
 - [ ] Section-by-section academic tense rules strictly verified (Past for methods/results, Present for theories/architecture).
+- [ ] Chapters 1 to 5 describe the system in present/future software engineering specification tense ("The proposed PWA will process...", "The system architecture consists of..."), avoiding past-tense claims suggesting completed clinical trials or deployment.
 - [ ] All statistical values correctly formatted ($p < .001$, no leading zeros on probabilities, italicized symbols).
 - [ ] All acronyms explicitly expanded upon first use in Abstract and Body.
 
@@ -286,6 +291,7 @@ Prior to marking any software feature complete or submitting any paper draft, ve
 - [ ] ISO/IEC 25010 and SUS usability benchmarks meet target thresholds.
 
 ### Phase 5: Scientific Reporting & Authorship
+- [ ] APA Formatting Check: Audit all in-text citations and reference entries against APA 7th Edition style (author-date format, italicized journal/book titles, proper DOI/URL formatting).
 - [ ] Manuscript includes exact p-values, confidence intervals, and effect sizes.
 - [ ] CRediT author contribution matrix is signed off by all proponents.
 - [ ] Plagiarism similarity index is verified $< 15\%$.
