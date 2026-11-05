@@ -8,6 +8,7 @@
 | Version | Date | Author | Description of Changes |
 | :--- | :--- | :--- | :--- |
 | **1.0** | October 24, 2026 | John Lloyd D. Canoy | Created Initial SOP |
+| **1.1** | November 5, 2026 | Project Team | Integrated Section V.E Gemini Notebook Prompting Protocol (no code) and updated Section V.A.3 with mandatory peer review and documentation logging requirements. |
 
 ---
 
@@ -83,8 +84,15 @@ The governed technical perimeter encompasses:
 2. **Code Review & Pull Requests**:
    - All PRs require at least one peer approval (Team Lead or QA Officer) prior to merge into `develop`.
    - Automated linting and test suites must pass without errors.
-3. **Documentation Updates**:
-   - Any architectural or API modification must be reflected in the SRS and API documentation.
+3. **Documentation Updates & Revision Logging**:
+   - **Architectural & API Alignment**: Any architectural, database schema, or API endpoint modification must be promptly reflected in the Software Requirements Specification (`amuma_srs_specification.md`) and API documentation.
+   - **Mandatory Review for SRS & Research Paper Edits**: Any addition, amendment, or revision made to the SRS, research paper manuscript, research protocols (`research-rules.md`), or standard operating procedures must undergo formal peer review and approval by the Team Lead (**Canoy**), Lead Researcher (**Jandayan**), or QA Officer (**Pimentel**) prior to integration.
+   - **Documentation Log Tracking**: All modifications across documentation files must be chronologically recorded in the project's documentation log (`DOCUMENTATION_LOG.md`) as well as the respective file's Revision History table. Each log entry must specify:
+     - **Date & Time of Edit**: When the modification was performed.
+     - **Author / Editor**: Name of the proponent who introduced the changes.
+     - **Target File & Section**: Exact document and section modified (e.g., `SRS Section 3.1.2`, `Chapter 1.1`).
+     - **Detailed Description of Changes**: Exact summary of what was added, modified, or removed, and the technical or research rationale.
+     - **Reviewer Sign-off**: Name of the peer reviewer who verified and approved the changes.
 
 #### V.B. Clinical Safety & Regulatory Guardrails
 1. **Zero Autonomous Clinical Diagnosis**:
