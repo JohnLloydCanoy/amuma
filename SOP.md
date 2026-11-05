@@ -9,6 +9,7 @@
 | :--- | :--- | :--- | :--- |
 | **1.0** | October 24, 2026 | John Lloyd D. Canoy | Created Initial SOP |
 | **1.1** | November 5, 2026 | Project Team | Integrated Section V.E Gemini Notebook Prompting Protocol (no code) and updated Section V.A.3 with mandatory peer review and documentation logging requirements. |
+| **1.2** | November 5, 2026 | Project Team | Added Section V.F codifying the mandatory research manuscript structure and detailed content requirements for Chapters 1, 2, and 3 in alignment with `research-rules.md` and CITC academic standards. |
 
 ---
 
@@ -29,6 +30,7 @@ This document serves as the Standard Operating Procedure (SOP) and Development M
   - [V.C. Security, Data Privacy & Encryption Protocols](#vc-security-data-privacy--encryption-protocols)
   - [V.D. Quality Assurance & Testing Procedure](#vd-quality-assurance--testing-procedure)
   - [V.E. Gemini Notebook Prompting Protocol (Manuscript Drafting)](#ve-gemini-notebook-prompting-protocol-manuscript-drafting)
+  - [V.F. Mandatory Research Manuscript Structure (Chapters 1, 2, and 3)](#vf-mandatory-research-manuscript-structure-chapters-1-2-and-3)
 - [VI. Tools and Equipment](#vi-tools-and-equipment)
   - [VI.A. Tools (Software & Frameworks)](#via-tools-software--frameworks)
   - [VI.B. Equipment (Hardware & Infrastructure)](#vib-equipment-hardware--infrastructure)
@@ -240,6 +242,138 @@ When generating or refining any section of the academic manuscript (e.g., Chapte
 - [ ] Target cohort is explicitly limited to USTP-CDO tertiary students aged 18–24 (Cochran $n=687$).
 - [ ] All citations follow APA 7th format and have been independently verified against legitimate literature.
 - [ ] Output audited with Compliance Audit Prompt (Prompt D) and verified for $<15\%$ similarity ceiling.
+
+---
+
+#### V.F. Mandatory Research Manuscript Structure (Chapters 1, 2, and 3)
+
+All proponents, authors, and AI drafting sessions must structure the first three chapters of the academic manuscript strictly according to this standardized structure. Every chapter and section must conform to the scientific protocols, academic tense matrix, and statutory boundaries established in `research-rules.md`.
+
+---
+
+##### Chapter 1: The Problem and Its Background
+
+* **1.1 Background of the Study**:
+  * Contextualize the mental health landscape, psychosocial stressors, and help-seeking friction among Filipino tertiary students (specifically young adults aged 18–24) in Cagayan de Oro City.
+  * Document institutional guidance counseling bottlenecks at USTP-CDO (unfavorable counselor-to-student ratios, privacy apprehension, manual intake queues).
+  * Introduce digital health interventions as low-barrier pre-clinical triage: Progressive Web Apps (PWAs), localized multilingual conversational AI buffering (English and Cebuano/Bisaya code-switching), and gamified micro-interventions (e.g., Cat Sudoku, streak tracking).
+  * Detail statutory and liability gaps in existing commercial platforms (unmonitored out-of-hours queues, autonomous diagnostic overreach violating RA 11036 and RA 10173).
+  * Synthesize the scientific rationale for Amuma as a secure, non-diagnostic pre-clinical triage buffer and appointment bridge.
+
+* **1.2 Statement of the Problem**:
+  * **General Problem Statement**: Articulate the lack of an accessible, dialect-aware, and privacy-compliant digital middleman platform connecting USTP-CDO tertiary students with Registered Guidance Counselors (RGCs) without imposing clinical liability or intake friction.
+  * **Specific Research Questions (RQs)**:
+    * *RQ1 (Intake Friction & Venting)*: How does a multilingual conversational AI buffer assist students in articulating emotional distress without making clinical diagnoses?
+    * *RQ2 (Gamified Engagement & Retention)*: To what extent do gamified mental fitness mechanics (daily mood check-ins, CBT micro-exercises, streaks) sustain student self-care engagement?
+    * *RQ3 (Triage & Guidance Scheduling)*: How effectively does college-routed appointment booking and encrypted pre-session intake summarization streamline RGC consultation preparation?
+    * *RQ4 (System Usability & Regulatory Compliance)*: What is the usability rating of the Amuma PWA across ISO/IEC 25010 criteria, and does it strictly comply with RA 10173 (Data Privacy) and RA 11036 (Mental Health)?
+
+* **1.3 Objectives of the Study**:
+  * **General Objective**: To design, develop, and evaluate **Amuma**, an AI-driven appointment scheduling, gamified mental fitness, and pre-clinical triage Progressive Web App (PWA) for university guidance counseling at USTP-CDO.
+  * **Specific Objectives**: Directly aligned 1:1 with RQ1–RQ4:
+    1. To design and implement a multilingual conversational AI buffer capable of processing natural Bisaya-English venting within strict non-diagnostic boundaries.
+    2. To develop gamified mental fitness features (daily mood check-ins, Cat Sudoku, streaks) that encourage sustained self-care habits.
+    3. To build a secure, college-routed appointment scheduling module that generates encrypted intake briefings for RGCs.
+    4. To evaluate the system’s usability, security, and performance using ISO/IEC 25010 and the System Usability Scale (SUS), ensuring full compliance with RA 10173, RA 11036, and RA 9258.
+
+* **1.4 Scope and Limitations**:
+  * **Target Cohort & Setting**: Tertiary students and young adults aged 18–24 enrolled at USTP-CDO (regional population $N \approx 106,973$; Cochran formula validated sample target $n = 687$, actual survey sample $N = 709$).
+  * **Technical Perimeter**: Progressive Web App (PWA) built on Next.js, Python FastAPI microservices, and PostgreSQL database with AES-256 encryption at rest and TLS 1.3 in transit.
+  * **Clinical & Operational Delimitations**:
+    * Strictly **pre-clinical and non-diagnostic** (RA 11036); the system does not deliver psychotherapy, clinical evaluations, or medication advice.
+    * **Zero Automated Crisis Dispatch**: Emergency intervention is delimited to an offline-cached static Emergency Resource Card (`tel:` URI links to 911, CSWD CDO 24/7 Hotline, and CUMC ER).
+    * Diagnostic authority remains exclusively with licensed Registered Guidance Counselors (RA 9258).
+
+* **1.5 Significance of the Study**:
+  * **To University Students**: Provides a low-stigma, dialect-aware, and anonymous pre-screening buffer to express distress and book appointments without fear of judgment.
+  * **To Registered Guidance Counselors (RGCs)**: Provides structured, encrypted intake summaries prior to sessions, reducing administrative intake overhead and optimizing consultation time.
+  * **To University Administration & CITC**: Offers an empirically validated model for deploying privacy-first, statutory-compliant digital health technology in higher education.
+  * **To Future Researchers**: Contributes empirical benchmarks and methodologies for regional dialect NLP (Bisaya/Cebuano), $k$-anonymity enforcement, and non-diagnostic conversational buffering.
+
+* **1.6 Definition of Terms**:
+  * Provide conceptual and operational definitions for key technical and domain terms: *Pre-Clinical Triage*, *Conversational AI Buffer*, *Gamified Mental Fitness*, *Progressive Web App (PWA)*, *Registered Guidance Counselor (RGC)*, *Role-Based Access Control (RBAC)*, *$k$-Anonymity*, *Sensitive Personal Information (SPI)*, and *Static Emergency Resource Card*.
+
+---
+
+##### Chapter 2: Review of Related Literature
+
+* **2.1 Chapter Overview**:
+  * Provide an introductory overview of Chapter 2, outlining the thematic progression from theoretical underpinnings and statutory mandates to empirical studies, state-of-the-art system benchmarks, and the synthesis establishing the research gap.
+
+* **2.2 Related Literature**:
+  * **Theoretical Foundations**: Cognitive Behavioral Therapy (CBT) micro-intervention paradigms, Self-Determination Theory (gamification mechanics, intrinsic motivation), and health technology acceptance models.
+  * **Statutory & Regulatory Framework**: In-depth review of the Philippine Data Privacy Act of 2012 (RA 10173), Philippine Mental Health Act of 2018 (RA 11036), Guidance and Counseling Act of 2004 (RA 9258), and ISO/IEC 25010 software quality standards.
+  * **Citation Quality Standard**: In compliance with `research-rules.md` Section 4.4, at least **80% of cited literature must be peer-reviewed** journal articles, proceedings, or official legal acts published within the **last 5 years** (APA 7th Edition).
+
+* **2.3 Related Studies**:
+  * Empirical investigations into university student mental health epidemiology, help-seeking stigma, barriers to campus counseling, and counseling load bottlenecks.
+  * Studies on digital conversational agents, natural language processing for low-resource or code-switched dialects (Bisaya/Cebuano/English), and automated intake summarization in healthcare.
+  * Research on gamified self-care tools (streaks, mood tracking, micro-puzzles) and their impact on sustained digital intervention adherence.
+
+* **2.4 Related Systems**:
+  * Comparative architectural and functional review of existing mental health applications, tele-counseling platforms, and university booking systems (e.g., Woebot, Wysa, standard institutional portals).
+  * Systematically analyze existing solutions across key criteria: dialect support, diagnostic vs. non-diagnostic positioning, counselor integration, crisis liability mitigation, and data privacy safeguards.
+
+* **2.5 Synthesis and Research Gap**:
+  * Synthesize common findings, strengths, and systemic shortcomings of reviewed literature and commercial systems.
+  * Clearly articulate the **Research Gap**: Existing systems either attempt risky autonomous clinical diagnosis, lack local dialect (Bisaya) sensitivity, operate without human counselor-in-the-loop triage integration, or introduce legal liability through unmonitored out-of-hours crisis queues. Amuma directly bridges this gap.
+
+* **2.6 Conceptual Framework**:
+  * Present and explain the study's Conceptual Framework using the **Input-Process-Output (IPO)** model or an architectural flow model:
+    * **Input**: Student psychosocial stressors, multilingual venting inputs, mood check-in data, survey responses ($N=709$), counselor scheduling constraints, and statutory mandates (RA 10173, RA 11036).
+    * **Process**: Non-diagnostic AI conversational buffering, AES-256 encryption, $k$-anonymity de-identification, gamified habit reinforcement (Cat Sudoku), and RGC intake summary generation.
+    * **Output**: Secure pre-clinical triage Progressive Web App (Amuma), streamlined guidance appointments, offline emergency referrals, and empirically verified usability metrics.
+
+---
+
+##### Chapter 3: Methodology
+
+* **3.1 Chapter Overview**:
+  * Outline the methodological framework, research design, engineering workflows, and evaluative procedures detailed throughout Chapter 3.
+
+* **3.2 Software Development Approach**:
+  * Document the software development life cycle (SDLC) model utilized (e.g., Agile-Scrum with iterative 2-week sprint cycles or modified Waterfall for regulatory milestones).
+  * Describe the phases of requirements engineering, architectural design, component development, adversarial red-teaming, and usability evaluation.
+
+* **3.3 Requirements Gathering**:
+  * **Sampling Protocol**: Target youth population in CDO ($N \approx 106,973$); Cochran's formula target sample $n = 687$; actual administered and validated sample $N = 709$ USTP tertiary students.
+  * **Data Collection Channels**: Hybrid paper and Google Forms survey adhering to the **CHERRIES guidelines** (Checklist for Reporting Results of Internet E-Surveys).
+  * **Stakeholder Consultations**: Semi-structured interviews and clinical workflow mapping with licensed USTP Registered Guidance Counselors (RGCs).
+
+* **3.4 Requirements Analysis and Specification**:
+  * Comprehensive derivation of **Functional Requirements (FR-01 to FR-25)** and **Non-Functional Requirements (NFR-01 to NFR-10)** as documented in `amuma_srs_specification.md`.
+  * Definition of core modules: authentication, conversational buffer, mood logging, gamification, appointment scheduling, and counselor portal.
+
+* **3.5 System Design**:
+  * Architectural blueprints: Context Diagrams, Data Flow Diagrams (DFD Level 0 and Level 1), Entity-Relationship Diagrams (ERD), and Microservice Architecture.
+  * System mechanics: State-transition diagrams for emergency resource cards, booking workflow pipelines, and RBAC authorization matrices.
+
+* **3.6 Development Environment**:
+  * Specification of hardware and software development environments:
+    * *Frontend*: Next.js, React, Tailwind CSS, Service Workers (PWA).
+    * *Backend*: Python 3.11+, FastAPI microservices, Pydantic, Uvicorn.
+    * *Database & Security*: PostgreSQL, SQLAlchemy, AES-256 field encryption, TLS 1.3, PyJWT.
+    * *Analytics & Reproducibility*: Python data stack (Pandas, NumPy, Matplotlib) with pinned random seed ($SEED = 42$).
+
+* **3.7 Testing Plan**:
+  * **Unit & Integration Testing**: Automated route tests, schema validation, and token authentication checks.
+  * **Adversarial Red-Teaming (AI Safety)**: Stress-testing conversational prompts with self-harm, diagnostic baiting, and acute crisis keywords to verify 100% compliance in rendering static emergency cards.
+  * **Security & Vulnerability Audits**: Automated penetration scans (OWASP ZAP), role-escalation checks, and $k$-anonymity threshold validation ($k \ge 5$).
+
+* **3.8 Evaluation Instrument and Data Analysis**:
+  * **ISO/IEC 25010 Quality Evaluation**: Benchmarking functional suitability, performance efficiency ($<3$s page load, $<5$s AI inference), usability, reliability, and security.
+  * **System Usability Scale (SUS)**: Administration of the standardized 10-item Brooke (1996) instrument, targeting a mean score $\ge 80$ (Grade A).
+  * **Clinical Expert Likert Evaluation**: RGC evaluation of conversational empathy, non-diagnostic guardrails, and Bisaya dialectal naturalness.
+  * **Statistical Rigor**: Normality assessment using the Shapiro-Wilk test, reporting of exact $p$-values ($p < .001$, no leading zero), confidence intervals ($95\% \text{ CI}$), and effect sizes.
+
+* **3.9 Project Timeline and Milestones**:
+  * Comprehensive Gantt chart or milestone breakdown covering sprint phases: conceptualization, ethics review, requirements gathering, core development, security red-teaming, counselor evaluation, and final manuscript defense.
+
+* **3.10 Ethical Considerations**:
+  * Formal compliance with the **Singapore Statement on Research Integrity (2010)**.
+  * **Statutory Adherence**: Philippine Data Privacy Act (RA 10173), Mental Health Act (RA 11036), Guidance and Counseling Act (RA 9258).
+  * **Participant Protections**: Informed Consent Protocols, immutability of raw survey datasets, de-identification scrubbing, and $k$-anonymity ($k \ge 5$).
+  * **Generative AI Transparency**: Explicit disclosure of AI tooling in the Acknowledgments section adhering to IEEE/ACM publishing guidelines.
 
 ---
 

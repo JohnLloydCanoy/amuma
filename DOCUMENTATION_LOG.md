@@ -20,6 +20,7 @@ In accordance with Section V.A.3 of the *Amuma Standard Operating Procedure (SOP
 | **LOG-003** | Oct 24, 2026 | Canoy, John Lloyd D. | `SOP.md` (Initial Draft) | Created Initial Standard Operating Procedure covering engineering workflows, regulatory guardrails (RA 10173, RA 11036), proponents, roles, procedures, and tools/equipment. | Canoy, John Lloyd D. | **Approved** |
 | **LOG-004** | Nov 4, 2026 | Project Team | `research-rules.md` (Entire Doc) | Formulated core scientific paper writing protocols, Singapore Statement ethics, statutory compliance guardrails (RA 10173, RA 11036, RA 9258), APA 7th style, CRediT matrix, and pre-flight checklist. | Tong, JC Vanny Mill S. | **Approved** |
 | **LOG-005** | Nov 5, 2026 | Project Team | `SOP.md` (Section V.E & Section V.A.3) | Added Section V.E establishing the Gemini Notebook Prompting Protocol (no code, prompt-only templates for System Instructions, Chapter 1.1 Background, Chapter 1.2 Problem Statement, and Compliance Audit). Updated Section V.A.3 mandating formal peer reviews and chronological documentation logging. | Canoy, J. L. / Pimentel, D. F. | **Approved** |
+| **LOG-006** | Nov 5, 2026 | Project Team | `SOP.md` (Section V.F & Table of Contents) | Added Section V.F defining the mandatory academic manuscript structure and detailed section requirements for Chapters 1, 2, and 3 in alignment with `research-rules.md`, CITC capstone standards, and statutory guardrails. | Tong, JC Vanny Mill S. | **Approved** |
 
 ---
 
