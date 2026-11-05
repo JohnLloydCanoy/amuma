@@ -27,6 +27,7 @@ This document serves as the Standard Operating Procedure (SOP) and Development M
   - [V.B. Clinical Safety & Regulatory Guardrails](#vb-clinical-safety--regulatory-guardrails)
   - [V.C. Security, Data Privacy & Encryption Protocols](#vc-security-data-privacy--encryption-protocols)
   - [V.D. Quality Assurance & Testing Procedure](#vd-quality-assurance--testing-procedure)
+  - [V.E. Gemini Notebook Prompting Protocol (Manuscript Drafting)](#ve-gemini-notebook-prompting-protocol-manuscript-drafting)
 - [VI. Tools and Equipment](#vi-tools-and-equipment)
   - [VI.A. Tools (Software & Frameworks)](#via-tools-software--frameworks)
   - [VI.B. Equipment (Hardware & Infrastructure)](#vib-equipment-hardware--infrastructure)
@@ -107,6 +108,131 @@ The governed technical perimeter encompasses:
 2. **Usability & Offline Testing**: Verify PWA service worker caching, offline fallback screen rendering, and responsive UI scaling.
 3. **Security Audits**: Routine vulnerability scans, role escalation tests, and penetration testing on API endpoints.
 
+#### V.E. Gemini Notebook Prompting Protocol (Manuscript Drafting)
+
+##### 1. Personnel in Charge
+- **Lead Prompt Engineer**: **Cinco, John Dave P.** (Prompt design, system instruction envelopes, parameter calibration).
+- **Lead Researcher**: **Jandayan, Carl Bernie A.** (Section objectives, literature synthesis, thesis alignment).
+- **Integrity & Compliance Reviewer**: **Pimentel, Domvi Ford B.** (Pre-flight audit, similarity check, statutory compliance).
+- **Supervisory Approval**: **Canoy, John Lloyd D.** (Team Lead review, final sign-off).
+
+##### 2. Operational Policy & Grounding Mandate
+When generating or refining any section of the academic manuscript (e.g., Chapter 1: Introduction, Problem Statement, Objectives) inside a Gemini Notebook environment:
+- **Strict Rule Binding**: Every prompt must strictly abide by and anchor to `research-rules.md`. Ungrounded or open-ended prompts without statutory and ethical guardrails are strictly forbidden.
+- **Mandatory Statutory Constraints**: Explicitly enforce the Philippine Data Privacy Act of 2012 (RA 10173), the Philippine Mental Health Act (RA 11036), and the Guidance and Counseling Act of 2004 (RA 9258).
+- **Clinical Boundaries**: Enforce zero diagnostic claims. Amuma is strictly a pre-clinical triage buffer, gamified self-care motivator, and appointment booking bridge—never an autonomous diagnostic tool, virtual therapist, or crisis dispatcher.
+- **Demographic Precision**: Ground all contextual claims in the target cohort of tertiary students and young adults aged 18–24 at USTP-CDO (regional population ~106,973; Cochran sample target $n = 687$ at a 4% margin of error and 15% non-response buffer).
+- **Academic Standard**: Enforce APA 7th Edition citations, objective scholarly tone, and past tense for study methodology/results.
+
+##### 3. Step-by-Step Prompting Workflow
+1. **Step 1: Set the System Instruction (Master Guardrail Envelope)**
+   - Paste the Master System Prompt into the notebook's system instruction field. This permanently binds the model to `research-rules.md` and regulatory statutes for the session.
+2. **Step 2: Formulate the Segment-Specific Task Prompt**
+   - Provide the specific chapter, section number, structural outline, key themes, and boundary conditions.
+3. **Step 3: Run Regulatory & Self-Consistency Audit**
+   - Execute the verification prompt on the generated text to check for diagnostic overreach, hallucinated citations, or statutory violations.
+4. **Step 4: Plagiarism & CRediT Log**
+   - Verify that similarity is under 15% (Turnitin/iThenticate) and record the session details for the paper's mandatory *Acknowledgment of AI Use* disclosure.
+
+---
+
+##### 4. Master Prompt Templates
+
+###### Prompt Template A: Master System Instruction (Guardrail Envelope)
+*Paste this into the System Instruction field of the Gemini Notebook session:*
+
+> **SYSTEM INSTRUCTION:**
+> 
+> You are an expert scientific co-author and academic research assistant for the AMUMA capstone research paper at the University of Science and Technology of Southern Philippines – Cagayan de Oro Campus (USTP-CDO).
+> 
+> You must strictly abide by the authoritative project rules in `research-rules.md` and the following non-negotiable boundaries:
+> 
+> 1. **Statutory Guardrails**:
+>    - **RA 10173 (Philippine Data Privacy Act of 2012)**: All student interactions, check-ins, and intake summaries are Sensitive Personal Information (SPI). Enforce TLS 1.3 transit encryption and AES-256 storage encryption at rest.
+>    - **RA 11036 (Philippine Mental Health Act)**: The system is non-diagnostic. Zero autonomous medical diagnosing, clinical risk scoring, automated crisis intervention dispatch, or psychiatric medication advice.
+>    - **RA 9258 (Guidance and Counseling Act of 2004)**: All clinical, diagnostic, and therapeutic authority belongs exclusively to licensed Registered Guidance Counselors (RGCs). Amuma serves solely as a pre-clinical intake briefing bridge.
+> 
+> 2. **System Definition**:
+>    - Always describe Amuma strictly as an *"AI-driven appointment scheduling, gamified mental fitness, and pre-clinical triage Progressive Web App (PWA)"*. Never refer to it as a "virtual therapist", "diagnostic AI", or "autonomous crisis responder".
+> 
+> 3. **Target Cohort & Empirical Grounding**:
+>    - Target Population: Tertiary students and young adults aged 18–24 in Cagayan de Oro City (~106,973 regional cohort).
+>    - Study Sample: Cochran formula target of $n = 687$ respondents at a 4% margin of error with a 15% non-response buffer.
+>    - Setting: University of Science and Technology of Southern Philippines – Cagayan de Oro Campus (USTP-CDO).
+> 
+> 4. **Writing Style & Integrity**:
+>    - Style: APA 7th Edition in-text citation format.
+>    - Tone: Objective, rigorous, formal academic voice. Use past tense for procedures conducted and present tense for established literature truths.
+>    - Authenticity: Never hallucinate or fabricate citations, author names, or empirical statistics.
+
+---
+
+###### Prompt Template B: Chapter 1, Section 1.1 (Background of the Study) Prompt
+*Paste this into the user prompt field when generating Section 1.1:*
+
+> **USER PROMPT:**
+> 
+> **Task**: Draft Section 1.1 (*Background of the Study*) for Chapter 1 of the AMUMA capstone research manuscript.
+> 
+> **Required Section Outline**:
+> 1. **The Mental Health Landscape & Institutional Bottleneck**: Discuss the rising mental health challenges and help-seeking friction among Filipino tertiary students (specifically young adults aged 18–24), highlighting stigma, unfavorable counselor-to-student ratios, and guidance intake bottlenecks at USTP-CDO.
+> 2. **Digital Health Interventions as Pre-Clinical Triage**: Examine how Progressive Web Apps (PWAs), multilingual conversational AI buffers (English and Cebuano/Bisaya), and gamified micro-interventions (e.g., Cat Sudoku, streak tracking) can reduce initial hesitation without replacing human professionals.
+> 3. **The Regulatory & Ethical Gap in Existing Solutions**: Critique existing commercial solutions that risk legal liability by offering unmonitored out-of-hours queues or pseudo-diagnostic claims that violate RA 11036 and RA 10173.
+> 4. **The Rationale for Amuma**: Synthesize why Amuma is uniquely engineered as a decoupled pre-clinical triage buffer, gamified self-care motivator, and college-routed appointment bridge featuring static emergency hotline referrals and encrypted intake briefings for RGCs.
+> 
+> **Mandatory Constraints**:
+> - Abide strictly by the System Instruction guardrails and `research-rules.md`.
+> - Include appropriate APA 7th in-text citations for validated instruments (e.g., PHQ-9; Kroenke et al., 2001) and national statutes.
+> - Ensure zero clinical or diagnostic overreach.
+> - Format in 4–5 coherent academic paragraphs with clear transitions.
+
+---
+
+###### Prompt Template C: Chapter 1, Section 1.2 (Statement of the Problem) Prompt
+*Paste this into the user prompt field when generating Section 1.2:*
+
+> **USER PROMPT:**
+> 
+> **Task**: Draft Section 1.2 (*Statement of the Problem*) for Chapter 1 of the AMUMA research paper.
+> 
+> **Required Content**:
+> 1. **General Problem Statement**: Formulate an overarching statement addressing the lack of a secure, stigma-reducing, and privacy-compliant digital middleman platform connecting USTP-CDO students with university Registered Guidance Counselors (RGCs).
+> 2. **Specific Research Questions**: Develop 4 targeted research questions:
+>    - *RQ1 (Intake Friction & Venting)*: How does a multilingual conversational AI buffer assist students in articulating emotional distress without making clinical diagnoses?
+>    - *RQ2 (Gamified Engagement & Retention)*: To what extent do gamified mental fitness mechanics (daily mood check-ins, CBT micro-exercises, streaks) sustain student self-care engagement?
+>    - *RQ3 (Triage & Guidance Scheduling)*: How effectively does college-routed appointment booking and encrypted pre-session intake summarization streamline RGC consultation preparation?
+>    - *RQ4 (System Usability & Regulatory Compliance)*: What is the usability rating of the Amuma PWA across ISO/IEC 25010 criteria, and does it strictly comply with RA 10173 (Data Privacy) and RA 11036 (Mental Health)?
+> 
+> **Mandatory Constraints**:
+> - Adhere to APA 7th style and `research-rules.md`.
+> - Maintain strict non-diagnostic phrasing across all research questions.
+
+---
+
+###### Prompt Template D: Post-Generation Compliance Audit Prompt
+*Paste this into the notebook session immediately after generating text to perform a self-audit:*
+
+> **USER PROMPT:**
+> 
+> **Audit Task**: Review the preceding draft text against the AMUMA research protocol (`research-rules.md`).
+> 
+> Check and report on each item:
+> 1. **Diagnostic Overreach**: Does any sentence claim or imply that Amuma diagnoses, treats, or evaluates mental illness? If yes, flag the exact sentence and rewrite it to adhere to RA 11036.
+> 2. **Emergency Dispatch Liability**: Does the text mention automated crisis dispatching or unmonitored crisis ticketing? If yes, correct it to reference static, offline-cached emergency hotline cards.
+> 3. **Demographic & Cohort Fidelity**: Are the demographic targets (USTP-CDO, 18–24 cohort, Cochran $n=687$) cited accurately?
+> 4. **Citation Check**: Flag any citation that cannot be verified in established scholarly literature or official statutory gazettes.
+> 5. **Tone & Style**: Does the text maintain formal APA 7th academic standards without conversational filler?
+
+---
+
+##### 5. Post-Prompt Verification Checklist (Definition of Done)
+- [ ] Master System Instruction (Prompt A) was active throughout generation.
+- [ ] Text strictly frames Amuma as a pre-clinical triage buffer, not a diagnostic or clinical tool.
+- [ ] National statutes (RA 10173, RA 11036, RA 9258) are accurately referenced.
+- [ ] Target cohort is explicitly limited to USTP-CDO tertiary students aged 18–24 (Cochran $n=687$).
+- [ ] All citations follow APA 7th format and have been independently verified against legitimate literature.
+- [ ] Output audited with Compliance Audit Prompt (Prompt D) and verified for $<15\%$ similarity ceiling.
+
 ---
 
 ### VI. Tools and Equipment
@@ -115,7 +241,7 @@ The governed technical perimeter encompasses:
 - **Frontend**: Next.js, React, Tailwind CSS, Service Workers (PWA)
 - **Backend & APIs**: Python 3.11+, FastAPI, Uvicorn, Pydantic
 - **Database & ORM**: PostgreSQL, SQLAlchemy / Alembic
-- **Data Science & Analytics**: Jupyter Notebook, Pandas, NumPy, Seaborn, Matplotlib
+- **Data Science & Analytics**: Jupyter Notebook, Pandas, NumPy, Seaborn, Matplotlib (see [GEMINI_NOTEBOOK_PROMPTING_GUIDE.md](file:///c:/Users/Nitro/Desktop/Projects/School/amuma/GEMINI_NOTEBOOK_PROMPTING_GUIDE.md))
 - **Security & Cryptography**: PyCryptodome / Cryptography (AES-256), OpenSSL (TLS 1.3), JSON Web Tokens (PyJWT)
 - **Version Control & Collaboration**: Git, GitHub, Visual Studio Code
 
